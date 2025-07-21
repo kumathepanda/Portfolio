@@ -88,7 +88,8 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(rgba(10, 10, 26, 0.7), rgba(10, 10, 26, 0.9)), url('https://i.imgur.com/gplK3bl.jpg') no-repeat center center/cover;
+            /* UPDATED: Removed image, using a more dynamic gradient */
+            background: linear-gradient(135deg, #0a0a1a 20%, #1a1a2e 60%, var(--primary-color) 100%);
             position: relative;
         }
         
@@ -102,6 +103,7 @@
             font-size: 1.8rem;
             color: var(--secondary-color);
             font-weight: 700;
+            min-height: 50px; /* Ensures space for the text */
         }
 
         .social-links {
@@ -122,8 +124,13 @@
         /* Sections */
         section {
             padding: 5rem 0;
+        }
+
+        /* Use a pseudo-element for a styled horizontal rule */
+        section:not(:last-of-type) {
             border-bottom: 1px solid #2a2a3e;
         }
+
 
         h2.section-title {
             text-align: center;
@@ -293,6 +300,7 @@
             text-align: center;
             padding: 2rem 0;
             background: #000;
+            border-top: 1px solid #2a2a3e;
         }
 
     </style>
@@ -331,8 +339,6 @@
             <p>I am an aspiring <b>Data Scientist</b> with a strong foundation in Machine Learning, Deep Learning, and real-world data applications, currently pursuing a B.Tech in Communication and Computer Engineering. I am passionate about solving complex problems by uncovering data-driven insights and building practical, deployable ML solutions. This drive for continuous learning keeps me engaged with the latest advancements in the tech world.</p>
             <p>Beyond the world of data, I have a diverse range of interests that keep my mind sharp and engaged. I'm an avid <b>chess</b> player, always looking for a new strategy to master. I also enjoy unwinding with <b>anime</b> and <b>movies</b>, and I'm a passionate <b>football</b> fan. These hobbies, combined with my professional pursuits, reflect my identity as both an analytical thinker and an active, curious learner.</p>
         </section>
-
-        <hr/>
 
         <section id="projects">
             <h2 class="section-title">Personal Projects</h2>
@@ -386,7 +392,6 @@
             </div>
         </section>
 
-        <hr/>
         
         <section id="skills">
             <h2 class="section-title">Technical Arsenal</h2>
@@ -421,7 +426,6 @@
             </div>
         </section>
 
-        <hr/>
 
         <section id="certifications">
             <h2 class="section-title">Certifications</h2>
@@ -436,7 +440,6 @@
             </div>
         </section>
 
-        <hr/>
 
         <section id="contact">
             <h2 class="section-title">Get In Touch</h2>
@@ -458,13 +461,33 @@
         const typingText = document.querySelector('.typing');
         const text = "Aspiring Data Scientist |AI / ML Enthusiast | SQL Expert | Data Driven | Teachable";
         let index = 0;
+        let isDeleting = false;
+        let loopNum = 0;
 
         function type() {
-            if (index < text.length) {
-                typingText.textContent += text.charAt(index);
-                index++;
-                setTimeout(type, 100);
+            const fullText = text;
+            if (isDeleting) {
+                typingText.textContent = fullText.substring(0, typingText.textContent.length - 1);
+            } else {
+                typingText.textContent = fullText.substring(0, typingText.textContent.length + 1);
             }
+
+            let typeSpeed = 150;
+
+            if (isDeleting) {
+                typeSpeed /= 2;
+            }
+
+            if (!isDeleting && typingText.textContent === fullText) {
+                typeSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && typingText.textContent === '') {
+                isDeleting = false;
+                loopNum++;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
         }
 
         document.addEventListener('DOMContentLoaded', type);
