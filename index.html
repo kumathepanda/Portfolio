@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parth Ramdeo | Data Scientist</title>
+    <style>
+        /* CSS for the website */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #00aaff;
+            --secondary-color: #00e5ff;
+            --background-color: #0a0a1a;
+            --text-color: #e0e0e0;
+            --card-bg-color: #1a1a2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 10, 26, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(10, 10, 26, 0.7), rgba(10, 10, 26, 0.9)), url('https://i.imgur.com/gplK3bl.jpg') no-repeat center center/cover;
+            position: relative;
+        }
+        
+        .hero-content h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-content .typing {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .social-links {
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            margin: 0 15px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid #2a2a3e;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+        
+        /* About Section */
+        #about p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 1rem auto;
+            text-align: center;
+            line-height: 1.8;
+        }
+        
+        #about p b {
+            color: var(--secondary-color);
+        }
+
+
+        /* Projects Section */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 170, 255, 0.2);
+        }
+
+        .project-card h3 {
+            color: var(--secondary-color);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .project-link {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .project-link:hover {
+            background: var(--secondary-color);
+        }
+
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            background: var(--primary-color);
+            color: var(--background-color);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .skill-category {
+            background: var(--card-bg-color);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .skill-category h3 {
+            color: var(--secondary-color);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Certifications */
+        .cert-card {
+            background: var(--card-bg-color);
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cert-card h3 {
+            color: var(--secondary-color);
+        }
+        
+        /* Contact Section */
+        #contact form {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--card-bg-color);
+            border: 1px solid var(--primary-color);
+            color: var(--text-color);
+            border-radius: 5px;
+        }
+
+        #contact button {
+            background: var(--primary-color);
+            color: #000;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #contact button:hover {
+            background: var(--secondary-color);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background: #000;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">PR.</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Parth Ramdeo</h1>
+            <p class="typing"></p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/parth-ramdeo-1328b926a" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/kumathepanda" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:ramdeoparth@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p>I am an aspiring <b>Data Scientist</b> with a strong foundation in Machine Learning, Deep Learning, and real-world data applications, currently pursuing a B.Tech in Communication and Computer Engineering. I am passionate about solving complex problems by uncovering data-driven insights and building practical, deployable ML solutions. This drive for continuous learning keeps me engaged with the latest advancements in the tech world.</p>
+            <p>Beyond the world of data, I have a diverse range of interests that keep my mind sharp and engaged. I'm an avid <b>chess</b> player, always looking for a new strategy to master. I also enjoy unwinding with <b>anime</b> and <b>movies</b>, and I'm a passionate <b>football</b> fan. These hobbies, combined with my professional pursuits, reflect my identity as both an analytical thinker and an active, curious learner.</p>
+        </section>
+
+        <hr/>
+
+        <section id="projects">
+            <h2 class="section-title">Personal Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>EdTech Recorded Lectures Dashboard</h3>
+                    <p>An interactive Power BI dashboard analyzing data from EdTech platforms to guide a startup's content strategy, focusing on course categories, viewer engagement, and language preferences.</p>
+                    <a href="https://github.com/kumathepanda/Online-courses-dashboard" class="project-link" target="_blank">View Project</a>
+                    <div class="tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">DAX</span>
+                        <span class="tag">Data Modeling</span>
+                        <span class="tag">Excel</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Employee Absenteeism Classification</h3>
+                    <p>Developed a binary classification model (Logistic Regression, 79% accuracy) to predict employee absenteeism. Engineered features, handled class imbalance, and visualized predictors in Tableau.</p>
+                    <a href="https://github.com/kumathepanda/Absenteeism_Module" class="project-link" target="_blank">View Project</a>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">scikit-learn</span>
+                        <span class="tag">Tableau</span>
+                        <span class="tag">Pandas</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Fake News Detection with Human-in-the-Loop</h3>
+                    <p>Built a fake news classifier with 98% accuracy using TF-IDF & SGD. Deployed a Streamlit app for real-time classification and user feedback collection via Google Sheets API for model retraining.</p>
+                    <a href="https://news-verifier-hsvqzmnxm45rvr3bi5ckay.streamlit.app/" class="project-link" target="_blank">View Live App</a>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">scikit-learn</span>
+                        <span class="tag">Google Sheets API</span>
+                    </div>
+                </div>
+                 <div class="project-card">
+                    <h3>Movie Recommender System</h3>
+                    <p>Engineered a content-based recommender system using cosine similarity. The model processes movie genres, keywords, cast, and crew to suggest films with similar content. Deployed as an interactive Streamlit web app.</p>
+                     <a href="https://movie-recommender-system-jgppdr3arg8eaaw9easkjt.streamlit.app/" class="project-link" target="_blank">View Live App</a>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">scikit-learn</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">NLTK</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr/>
+        
+        <section id="skills">
+            <h2 class="section-title">Technical Arsenal</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C/C++</li>
+                        <li>SQL</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Libraries & Frameworks</h3>
+                    <ul>
+                        <li>scikit-learn</li>
+                        <li>Keras</li>
+                        <li>TensorFlow</li>
+                        <li>Pandas & NumPy</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Databases</h3>
+                    <ul>
+                        <li>Streamlit</li>
+                        <li>Git & GitHub</li>
+                        <li>MySQL & PostgreSQL</li>
+                        <li>Google Sheets API</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr/>
+
+        <section id="certifications">
+            <h2 class="section-title">Certifications</h2>
+             <div class="cert-card">
+                <h3>Deloitte Australia Job Simulation on Forage</h3>
+                <p>Created an interactive Tableau dashboard for IoT device tracking and analyzed salary distribution to support a better work environment for Daikibo Industries, Japan.</p>
+            </div>
+             <div class="cert-card">
+                <h3>LeetCode SQL50 Badge</h3>
+                <p>Solved 50 curated SQL problems on LeetCode, earning the SQL50 badge as proof of applied database querying.
+                </p>
+            </div>
+        </section>
+
+        <hr/>
+
+        <section id="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <form action="mailto:ramdeoparth@gmail.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Parth Ramdeo.</p>
+    </footer>
+
+    <script>
+        // JavaScript for typing effect
+        const typingText = document.querySelector('.typing');
+        const text = "Aspiring Data Scientist |AI / ML Enthusiast | SQL Expert | Data Driven | Teachable";
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typingText.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, 100);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', type);
+    </script>
+</body>
+</html>
