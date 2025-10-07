@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parth Ramdeo | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1><a>Parth Ramdeo</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">./AboutMe</a></li>
+                    <li><a href="#projects">./Projects</a></li>
+                    <li><a href="#skills">./Skills</a></li>
+                    <li><a href="#experience">./Experience</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="about" class="terminal-window">
+                <div class="window-header">
+                    <span class="button red"></span>
+                    <span class="button yellow"></span>
+                    <span class="button green"></span>
+                    <span class="title">AboutMe.sh</span>
+                </div>
+                <div class="window-body">
+                    <div class="profile-photo">
+                        <img src="parth_photo.jpg" alt="Parth Ramdeo Profile Photo">
+                    </div>
+                    <p class="prompt">> Parth Ramdeo</p>
+                    <p class="output" id="typewriter"></p>
+                    <p class="prompt">> Contact Information</p>
+                    <ul class="output">
+                        <li>Email: <a href="mailto:ramdeoparth@gmail.com">ramdeoparth@gmail.com</a></li>
+                        <li>Phone: <a href="tel:+917357222550">+91-7357222550</a></li>
+                    </ul>
+                    <p class="prompt">> Professional Links</p>
+                    <div class="links output">
+                        <a href="https://www.linkedin.com/in/parth-ramdeo-1328b926a" target="_blank">[ LinkedIn ]</a>
+                        <a href="https://github.com/kumathepanda" target="_blank">[ GitHub ]</a>
+                        <a href="https://leetcode.com/u/parth_hehe/" target="_blank">[ LeetCode (1522) ]</a>
+                        <a href="https://www.geeksforge.org/user/ramdeo6c9f/" target="_blank">[ GeeksForGeeks ]</a>
+                    </div>
+                    <p class="prompt">> Education</p>
+                    <p class="output">B.Tech in Communication and Computer Engineering</p>
+                    <p class="output">Laxmi Niwas Mittal Institute of Information Technology, Jaipur (CGPA: 6.55/10)</p>
+                </div>
+            </section>
+
+            <section id="projects" class="terminal-window">
+                <div class="window-header">
+                    <span class="title">Projects.sh</span>
+                </div>
+                <div class="window-body">
+                    <div class="project-card">
+                        <p class="prompt">> Project: Chest Cancer Classification using Transfer Learning</p>
+                        <p class="output">A deep learning model to classify chest cancer from CT scans. Fine-tuned DenseNet121 to achieve 93% recall and 96% AUC. The solution is containerized with Docker and deployed on Azure with a CI/CD pipeline.</p>
+                        <p class="output technologies"><span>Tech:</span> Deep Learning, Docker, Flask, Azure, MLflow, DVC</p>
+                        <div class="links">
+                            <a href="https://chestcancerclassification-bxh6gefng0faandn.centralindia-01.azurewebsites.net/" target="_blank">[ Live Demo ]</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <p class="prompt">> Project: TalkToTube</p>
+                        <p class="output">An AI-powered browser extension that lets users chat with any YouTube video. It uses a Retrieval-Augmented Generation (RAG) pipeline to deliver context-aware responses and supports transcript translation in 5+ languages.</p>
+                        <p class="output technologies"><span>Tech:</span> RAG, Python, Lang Chain, Flask, JavaScript</p>
+                        <div class="links">
+                            <a href="https://github.com/kumathepanda/youtube_rag_chatbot" target="_blank">[ GitHub Repo ]</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <p class="prompt">> Project: LNMIIT Grievance Management System</p>
+                        <p class="output">A full-stack web portal for over 2,000 students to manage grievances. Implemented SLA-based workflows, reducing resolution time by 35%, and designed secure role-based access.</p>
+                        <p class="output technologies"><span>Tech:</span> Node.js, React.js, Express.js, MySQL, Git</p>
+                        <div class="links">
+                            <a href="https://github.com/ohhpeejoshi/grievance-management-system" target="_blank">[ GitHub Repo ]</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="terminal-window">
+                <div class="window-header">
+                    <span class="title">Skills.ini</span>
+                </div>
+                <div class="window-body">
+                    <div class="skills-grid">
+                        <div>
+                            <p class="prompt">> Languages</p>
+                            <p class="output">[ Python, C++, SQL, HTML/CSS ]</p>
+                        </div>
+                        <div>
+                            <p class="prompt">> Data Science & ML</p>
+                            <p class="output">[ scikit-learn, Pandas, NumPy, TensorFlow, Keras, Lang Chain ]</p>
+                        </div>
+                        <div>
+                            <p class="prompt">> Backend & Frontend</p>
+                            <p class="output">[ Flask, Streamlit, HTML/CSS, Bootstrap ]</p>
+                        </div>
+                        <div>
+                            <p class="prompt">> Databases</p>
+                            <p class="output">[ MySQL ]</p>
+                        </div>
+                        <div>
+                            <p class="prompt">> Core CS</p>
+                            <p class="output">[ Data Structures & Algorithms (500+ problems), OS, OOPS, DBMS ]</p>
+                        </div>
+                        <div>
+                            <p class="prompt">> Tools</p>
+                            <p class="output">[ Git, GitHub, Postman, VS Code, Google Colab, Docker ]</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="terminal-window">
+                <div class="window-header">
+                    <span class="title">Experience.log</span>
+                </div>
+                <div class="window-body">
+                    <p class="prompt">> Teaching Assistant for AI/ML Lab</p>
+                    <ul class="output">
+                        <li>Mentored 80+ undergraduates in applying ML algorithms using Python, scikit-learn, and TensorFlow.</li>
+                        <li>Created 15+ practice exercises, raising lab engagement by 40%.</li>
+                        <li>Supported debugging for 40+ ML projects, reducing average troubleshooting time by 30%.</li>
+                        <li>Clarified theoretical ML concepts, improving assignment completion rates by 25%.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>parth-ramdeo-portfolio ~ % </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
