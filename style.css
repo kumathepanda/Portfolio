@@ -1,222 +1,32 @@
-:root {
-    --background: #0d1a26; /* Darker blue-grey for background */
-    --text: #73c2fb;     /* Softer blue for text */
-    --border-color: #4a90e2; /* Muted blue for borders and highlights */
-    --prompt-color: #a0a0a0; /* Slightly desaturated grey for prompts */
-    --link-hover: #ffffff;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+/* Apply base styles - Tailwind CDN might not apply these perfectly to body */
 body {
-    background-color: var(--background);
-    color: var(--text);
-    font-family: 'VT323', monospace;
-    font-size: 18px;
-    line-height: 1.6;
-    text-shadow: 0 0 3px rgba(115, 194, 251, 0.4); /* Softer glow */
-    background-image: linear-gradient(rgba(0,0,0,0.2) 50%, transparent 50%); /* Subtle scanlines */
-    background-size: 100% 4px;
+    background-color: #181818;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif; /* Use Inter font */
 }
 
-.container {
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
+/* Skills infinite scroll animation */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  /* Use a CSS variable for the translation distance */
+  100% { transform: translateX(var(--scroll-width, -50%)); }
 }
 
-/* HEADER & NAVIGATION */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 20px;
-    border-bottom: 2px solid var(--border-color);
-    margin-bottom: 40px;
+.skills-container {
+  /* Increase animation duration if needed for many skills */
+  animation: scroll 40s linear infinite; /* Adjusted duration */
+  pointer-events: none; /* Keep this */
+  width: max-content; /* Ensure container is wide enough */
 }
 
-header h1 a {
-    font-size: 2rem;
-    color: var(--text);
-    text-decoration: none;
-}
+/* Optional: Style scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #2a2a2a; }
+::-webkit-scrollbar-thumb { background: #555; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #777; }
 
-nav ul {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    color: var(--text);
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-}
-
-nav a:hover {
-    background-color: var(--border-color); /* Hover background is the main blue */
-    color: var(--background); /* Text color swaps to background color on hover */
-    text-shadow: none;
-}
-
-/* TERMINAL WINDOW STYLE */
-.terminal-window {
-    border: 2px solid var(--border-color);
-    margin-bottom: 40px;
-    box-shadow: 0 0 10px rgba(74, 144, 226, 0.2); /* Softer shadow */
-}
-
-.window-header {
-    background-color: var(--border-color);
-    color: var(--background);
-    text-shadow: none;
-    padding: 5px 10px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-
-.window-header .title {
-    flex-grow: 1;
-    text-align: center;
-}
-
-.window-header .button {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin-right: 5px;
-    border: 1px solid var(--background);
-}
-.window-header .red { background-color: #ff6b6b; } /* Adjusted button colors for blue theme */
-.window-header .yellow { background-color: #ffe66d; }
-.window-header .green { background-color: #28b463; }
-
-.window-body {
-    padding: 20px;
-}
-
-.prompt {
-    color: var(--prompt-color);
-}
-
-.output {
-    padding-left: 1em;
-}
-
-/* LINKS STYLING */
-.links a {
-    color: var(--text);
-    text-decoration: none;
-    border: 1px solid var(--text);
-    padding: 2px 8px;
-    margin-right: 10px;
-    display: inline-block;
-    transition: all 0.2s ease-in-out;
-}
-
-.links a:hover {
-    background-color: var(--border-color);
-    color: var(--background);
-    text-shadow: none;
-}
-
-/* SECTION SPECIFIC STYLES */
-
-/* About Section */
-.profile-photo {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.profile-photo img {
-    width: 150px; /* Adjust size as needed */
-    height: 150px; /* Adjust size as needed */
-    border-radius: 50%; /* Makes it a circle */
-    border: 3px solid var(--border-color);
-    object-fit: cover;
-    box-shadow: 0 0 8px rgba(74, 144, 226, 0.5); /* Subtle glow around photo */
-}
-
-
-#typewriter::after {
-    content: '_';
-    animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-    50% { opacity: 0; }
-}
-
-/* Projects Section */
-.project-card {
-    margin-bottom: 25px;
-    border-bottom: 1px dashed var(--prompt-color);
-    padding-bottom: 15px;
-}
-.project-card:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-.technologies span {
-    background-color: rgba(74, 144, 226, 0.2); /* Adjusted background for blue theme */
-    padding: 2px 5px;
-}
-.project-card .links {
-    margin-top: 10px;
-}
-
-/* Skills Section */
-.skills-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-/* Experience Section */
-#experience ul {
-    list-style-type: square;
-    padding-left: 2em;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 2px solid var(--border-color);
-    color: var(--prompt-color);
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
-
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
+/* Prevent image dragging */
+.skill-card img {
+    user-select: none;
+    -webkit-user-drag: none;
 }
