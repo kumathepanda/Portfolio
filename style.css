@@ -1,6 +1,6 @@
 /* Apply base styles - Tailwind CDN might not apply these perfectly to body */
 body {
-    background-color: #181818;
+    background-color: #000000; /* Changed from #181818 to pure black */
     color: #ffffff;
     font-family: 'Inter', sans-serif; /* Use Inter font */
 }
@@ -19,11 +19,11 @@ body {
   width: max-content; /* Ensure container is wide enough */
 }
 
-/* Optional: Style scrollbar */
+/* Optional: Style scrollbar - Adjusted for monochrome theme */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #2a2a2a; }
-::-webkit-scrollbar-thumb { background: #555; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #777; }
+::-webkit-scrollbar-track { background: #18181b; } /* zinc-900 */
+::-webkit-scrollbar-thumb { background: #71717a; } /* zinc-500 */
+::-webkit-scrollbar-thumb:hover { background: #a1a1aa; } /* zinc-400 */
 
 /* Prevent image dragging */
 .skill-card img {
